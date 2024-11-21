@@ -1,0 +1,11 @@
+button.button {
+  font-size: 48px;
+  padding-left: 62px;
+  width: 543px;
+  height: 130px;
+  border-radius: 20px;
+  text-align: start;
+  background-color: var(--activeButtonBg);
+  color: inherit;
+  font-weight: 600;
+}
