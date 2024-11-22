@@ -4,7 +4,7 @@ import styles from "./LinkNav.module.css";
 export default function LinkNav({ children, onClick, to }) {
   const location = useLocation();
 
-  const isActive = location.pathname === to;
+  const isActive = location.pathname.includes(to);
 
   return (
     <button

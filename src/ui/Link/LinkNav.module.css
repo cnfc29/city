@@ -8,6 +8,7 @@ button.button {
   background-color: var(--buttonBg);
   color: inherit;
   font-weight: 600;
+  font-family: inherit;
 }
 
 button.button.active {

@@ -3,6 +3,11 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  background-image: url("../../assets/images/background/background-plug.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 .content {
@@ -24,4 +29,10 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
+}
+
+.qrCode {
+  position: absolute;
+  bottom: 105px;
+  right: 119px;
 }

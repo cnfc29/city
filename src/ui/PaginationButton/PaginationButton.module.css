@@ -1,0 +1,14 @@
+button.button {
+  width: 173px;
+  height: 68px;
+  font-size: 20px;
+  font-family: inherit;
+  border-radius: 20px;
+  background-color: var(--buttonBg);
+  color: inherit;
+  font-weight: 600;
+}
+
+button.button.active {
+  border: 2px solid var(--activeButtonBg);
+}

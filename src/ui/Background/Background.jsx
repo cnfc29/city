@@ -7,7 +7,7 @@ import { ROUTER } from "../../router.config";
 import { useInactivityRedirect } from "../../hooks/useInactivityRedirect";
 
 export default function Background() {
-  useInactivityRedirect(500000);
+  useInactivityRedirect(60000);
 
   const location = useLocation();
 

@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  height: auto;
+  margin-top: 194px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.wrapper {
+  display: flex;
+}

@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  height: auto;
+  margin-top: 194px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 103px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.wrapper {
+  display: flex;
+}

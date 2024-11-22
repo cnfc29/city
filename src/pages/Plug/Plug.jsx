@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router";
 import styles from "./Plug.module.css";
 import { useEffect } from "react";
+import QrCode from "../../ui/QrCode/QrCode";
+import qrCode from "@content/qr-code/qr-code.svg";
 export default function Plug() {
   const navigate = useNavigate();
 
@@ -24,6 +26,9 @@ export default function Plug() {
 
   return (
     <div className={styles.wrapper}>
+      <div className={styles.qrCode}>
+        <QrCode src={qrCode} plug={true} />
+      </div>
       <div className={styles.content}>
         <div className={styles.title}>Добро пожаловать в СберСити!</div>
         <div className={`text ${styles.textContainer}`}>

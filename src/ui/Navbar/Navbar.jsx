@@ -13,23 +13,26 @@ export default function Navbar() {
         <br />и преимущества Умного города
       </div>
       <div className={styles.linksContainer}>
-        <LinkNav onClick={() => navigate(ROUTER.citizen)} to={ROUTER.citizen}>
+        <LinkNav
+          onClick={() => navigate(`${ROUTER.citizen}/1`)}
+          to={ROUTER.citizen}
+        >
           Житель
         </LinkNav>
         <LinkNav
-          onClick={() => navigate(ROUTER.developer)}
+          onClick={() => navigate(`${ROUTER.developer}/1`)}
           to={ROUTER.developer}
         >
           Девелопер
         </LinkNav>
         <LinkNav
-          onClick={() => navigate(ROUTER.integrator)}
+          onClick={() => navigate(`${ROUTER.integrator}/1`)}
           to={ROUTER.integrator}
         >
           Интегратор
         </LinkNav>
         <LinkNav
-          onClick={() => navigate(ROUTER.managementCompany)}
+          onClick={() => navigate(`${ROUTER.managementCompany}/1`)}
           to={ROUTER.managementCompany}
         >
           Управляющая компания
