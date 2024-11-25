@@ -12,18 +12,20 @@ import qrCode from "@content/qr-code/qr-code.svg";
 export default function Citizen() {
   const { id } = useParams();
 
-  const citizen = data.find((el) => el.id === +id);
+  const citizen = data.find((el) => el.id === Number(id));
 
   return (
     <div className={styles.container}>
-      <div className={styles.mainContent}>
-        <GradientTextBlock />
+      <div className={`${styles.mainContent}`}>
+        <GradientTextBlock citizen />
         <div className={styles.content}>
           <Title title={citizen.title} />
           <div className={styles.wrapper}>
             <Description descriptions={citizen.descriptions} />
-            {+id === data.length && (
-              <QrCode style={{ marginRight: "144px" }} src={qrCode} />
+            {Number(id) === data.length && (
+              <div className={styles.qrCode}>
+                <QrCode style={{ marginRight: "144px" }} src={qrCode} />
+              </div>
             )}
           </div>
         </div>

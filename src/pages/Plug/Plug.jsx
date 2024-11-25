@@ -3,12 +3,13 @@ import styles from "./Plug.module.css";
 import { useEffect } from "react";
 import QrCode from "../../ui/QrCode/QrCode";
 import qrCode from "@content/qr-code/qr-code.svg";
+import { ROUTER } from "../../router.config";
 export default function Plug() {
   const navigate = useNavigate();
 
   useEffect(() => {
     const handleUserActivity = () => {
-      navigate("/");
+      navigate(ROUTER.main);
     };
 
     window.addEventListener("mousemove", handleUserActivity);

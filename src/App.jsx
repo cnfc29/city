@@ -12,6 +12,7 @@ import Citizen from "./pages/Citizen/Citizen";
 import Developer from "./pages/Developer/Developer.jsx";
 import Integrator from "./pages/Integrator/Integrator.jsx";
 import ManagementCompany from "./pages/ManagementCompany/ManagementCompany.jsx";
+import { useEffect } from "react";
 
 const routes = [
   {
@@ -42,6 +43,18 @@ const router = createHashRouter(routes, {
 });
 
 function App() {
+  useEffect(() => {
+    const disableRightClick = (event) => {
+      event.preventDefault();
+    };
+
+    window.addEventListener("contextmenu", disableRightClick);
+
+    return () => {
+      window.removeEventListener("contextmenu", disableRightClick);
+    };
+  }, []);
+
   return <RouterProvider router={router} />;
 }
 

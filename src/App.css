@@ -5,6 +5,7 @@
   border: 0;
   box-shadow: none;
   outline: none;
+  touch-action: none;
 }
 
 @font-face {
@@ -32,6 +33,8 @@ body {
   max-height: 1080px;
   max-width: 1920px;
   overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: manipulation;
 }
 
 :root {

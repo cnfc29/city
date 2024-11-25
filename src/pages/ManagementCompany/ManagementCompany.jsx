@@ -8,7 +8,7 @@ import data from "../../data/managementCompany.json";
 export default function ManagementCompany() {
   const { id } = useParams();
 
-  const developer = data.find((el) => el.id === +id);
+  const developer = data.find((el) => el.id === Number(id));
 
   return (
     <div className={styles.container}>
@@ -16,7 +16,7 @@ export default function ManagementCompany() {
         <Title title={developer.title} />
         {/* <div className={styles.wrapper}>
           <Description descriptions={developer.descriptions} />
-          {+id === data.length && (
+          {Number(id) === data.length && (
             <QrCode style={{ marginRight: "144px" }} src={qrCode} />
           )}
         </div> */}

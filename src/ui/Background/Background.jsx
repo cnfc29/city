@@ -6,6 +6,8 @@ import Navbar from "../Navbar/Navbar";
 import { ROUTER } from "../../router.config";
 import { useInactivityRedirect } from "../../hooks/useInactivityRedirect";
 
+const NOT_ALLOWED_ROUTES = [ROUTER.plug, ROUTER.main];
+
 export default function Background() {
   useInactivityRedirect(60000);
 
@@ -21,8 +23,7 @@ export default function Background() {
         <img src={logo} alt="Logo" />
       </div>
       <div className={styles.containerPage}>
-        {location.pathname !== ROUTER.plug &&
-          location.pathname !== ROUTER.main && <Navbar />}
+        {!NOT_ALLOWED_ROUTES.includes(location.pathname) && <Navbar />}
         <Outlet />
       </div>
     </div>

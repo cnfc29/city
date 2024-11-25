@@ -6,34 +6,31 @@ export default function Pagination({ data, route }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const handleNextPage = () => {
-    navigate(`${route}/${+id + 1}`);
+    navigate(`${route}/${Number(id) + 1}`);
   };
 
   const handlePrevPage = () => {
-    navigate(`${route}/${+id - 1}`);
+    navigate(`${route}/${Number(id) - 1}`);
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.navigationLinks}>
         {data.map((el) => (
-          <NavigationIcon key={el.id} active={+id === el.id} />
+          <NavigationIcon key={el.id} active={Number(id) === el.id} />
         ))}
       </div>
       <div className={styles.buttons}>
-        {+id !== 1 && (
+        {Number(id) !== 1 && (
           <PaginationButton onClick={handlePrevPage}>Назад</PaginationButton>
         )}
 
-        {data.length === +id ? (
-          <PaginationButton
-            onClick={() => navigate(`${route}/1`)}
-            active={true}
-          >
+        {data.length === Number(id) ? (
+          <PaginationButton onClick={() => navigate(`${route}/1`)} active>
             В начало
           </PaginationButton>
         ) : (
-          <PaginationButton onClick={handleNextPage} active={true}>
+          <PaginationButton onClick={handleNextPage} active>
             Далее
           </PaginationButton>
         )}

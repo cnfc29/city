@@ -9,7 +9,7 @@
 .mainContent {
   display: flex;
   flex-direction: column;
-  gap: 103px;
+  gap: 43px;
 }
 
 .content {
@@ -20,4 +20,10 @@
 
 .wrapper {
   display: flex;
+}
+
+.qrCode {
+  display: flex;
+  align-items: end;
+  padding-bottom: 18px;
 }
