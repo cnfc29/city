@@ -4,22 +4,38 @@ import Title from "../../ui/Title/Title";
 import Pagination from "../../ui/Pagination/Pagination";
 import { ROUTER } from "../../router.config";
 import data from "../../data/integrator.json";
+import Description from "../../ui/Description/Description";
+import List from "../../ui/List/List";
+import QrCode from "../../ui/QrCode/QrCode";
+import Photo from "../../ui/Photo/Photo";
+import qrCode from "@content/qr-code/qr-code.svg";
 
 export default function Integrator() {
   const { id } = useParams();
 
-  const developer = data.find((el) => el.id === Number(id));
+  const integrator = data.find((el) => el.id === Number(id));
 
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
-        <Title title={developer.title} />
-        {/* <div className={styles.wrapper}>
-          <Description descriptions={developer.descriptions} />
-          {Number(id) === data.length && (
-            <QrCode style={{ marginRight: "144px" }} src={qrCode} />
-          )}
-        </div> */}
+      <div className={styles.contentWrapper}>
+        <div className={styles.content}>
+          <Title title={integrator.title} />
+          <div className={styles.wrapper}>
+            {integrator.descriptions && (
+              <Description bold descriptions={integrator.descriptions} />
+            )}
+            <div className={styles.textContainer}>
+              {integrator.list && <List list={integrator.list} />}
+              {integrator.last && (
+                <Description small descriptions={integrator.last} />
+              )}
+            </div>
+            {Number(id) === data.length && (
+              <QrCode style={{ marginRight: "242px" }} src={qrCode} />
+            )}
+          </div>
+        </div>
+        {Number(id) !== data.length && <Photo id={integrator?.id} />}
       </div>
       <Pagination data={data} route={ROUTER.integrator} />
     </div>

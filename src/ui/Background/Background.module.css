@@ -16,6 +16,7 @@
   position: absolute;
   top: 68px;
   left: 85px;
+  z-index: 1;
 }
 
 .containerPage {
@@ -25,4 +26,8 @@
   gap: 170px;
   width: 100%;
   height: 100%;
+}
+
+.containerPage.smallGap {
+  gap: 138px;
 }

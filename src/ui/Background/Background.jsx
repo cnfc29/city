@@ -13,6 +13,12 @@ export default function Background() {
 
   const location = useLocation();
 
+  const isSmallGap = [
+    ROUTER.integrator,
+    ROUTER.developer,
+    ROUTER.managementCompany,
+  ].some((route) => location.pathname.startsWith(route));
+
   return (
     <div className={styles.background}>
       <video autoPlay muted loop>
@@ -22,7 +28,9 @@ export default function Background() {
       <div className={styles.logo}>
         <img src={logo} alt="Logo" />
       </div>
-      <div className={styles.containerPage}>
+      <div
+        className={`${styles.containerPage} ${isSmallGap && styles.smallGap}`}
+      >
         {!NOT_ALLOWED_ROUTES.includes(location.pathname) && <Navbar />}
         <Outlet />
       </div>

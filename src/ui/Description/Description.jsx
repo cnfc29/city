@@ -1,8 +1,12 @@
 import styles from "./Description.module.css";
 
-export default function Description({ descriptions, bold }) {
+export default function Description({ descriptions, bold, small }) {
   return (
-    <div className={`text ${styles.container} ${bold && styles.bold}`}>
+    <div
+      className={`text ${styles.container} ${bold && styles.bold} ${
+        small && styles.small
+      }`}
+    >
       {descriptions?.map((el, index) => (
         <span key={index}>
           {el}

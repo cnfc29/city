@@ -9,3 +9,8 @@
   font-weight: 600;
   line-height: 41.06px;
 }
+
+.container.small {
+  font-size: 18px;
+  line-height: normal;
+}
