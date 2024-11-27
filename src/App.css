@@ -6,6 +6,7 @@
   box-shadow: none;
   outline: none;
   touch-action: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @font-face {

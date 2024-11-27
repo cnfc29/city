@@ -5,6 +5,8 @@ import logo from "@content/logo/logo.svg";
 import Navbar from "../Navbar/Navbar";
 import { ROUTER } from "../../router.config";
 import { useInactivityRedirect } from "../../hooks/useInactivityRedirect";
+import QrCode from "../QrCode/QrCode";
+import qrCode from "@content/qr-code/qr-code.svg";
 
 const NOT_ALLOWED_ROUTES = [ROUTER.plug, ROUTER.main];
 
@@ -28,6 +30,11 @@ export default function Background() {
       <div className={styles.logo}>
         <img src={logo} alt="Logo" />
       </div>
+      {location.pathname === ROUTER.plug && (
+        <div className={styles.qrCode}>
+          <QrCode src={qrCode} plug />
+        </div>
+      )}
       <div
         className={`${styles.containerPage} ${isSmallGap && styles.smallGap}`}
       >

@@ -1,21 +1,24 @@
 import { useNavigate } from "react-router";
 import styles from "./Plug.module.css";
 import { useEffect } from "react";
-import QrCode from "../../ui/QrCode/QrCode";
-import qrCode from "@content/qr-code/qr-code.svg";
 import { ROUTER } from "../../router.config";
+
 export default function Plug() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const handleUserActivity = () => {
+    const handleUserActivity = (event) => {
+      event.stopPropagation();
+      event.preventDefault();
       navigate(ROUTER.main);
     };
 
-    window.addEventListener("mousemove", handleUserActivity);
-    window.addEventListener("mousedown", handleUserActivity);
-    window.addEventListener("keydown", handleUserActivity);
-    window.addEventListener("touchstart", handleUserActivity);
+    const options = { passive: false };
+
+    window.addEventListener("mousemove", handleUserActivity, options);
+    window.addEventListener("mousedown", handleUserActivity, options);
+    window.addEventListener("keydown", handleUserActivity, options);
+    window.addEventListener("touchstart", handleUserActivity, options);
 
     return () => {
       window.removeEventListener("mousemove", handleUserActivity);
@@ -27,9 +30,7 @@ export default function Plug() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.qrCode}>
-        <QrCode src={qrCode} plug={true} />
-      </div>
+      <div className={styles.background}></div>
       <div className={styles.content}>
         <div className={styles.title}>Добро пожаловать в СберСити!</div>
         <div className={`text ${styles.textContainer}`}>
