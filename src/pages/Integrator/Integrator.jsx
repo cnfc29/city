@@ -9,15 +9,21 @@ import List from "../../ui/List/List";
 import QrCode from "../../ui/QrCode/QrCode";
 import Photo from "../../ui/Photo/Photo";
 import qrCode from "@content/qr-code/qr-code.svg";
+import { useAnimation } from "../../hooks/useAnimation";
 
 export default function Integrator() {
   const { id } = useParams();
 
   const integrator = data.find((el) => el.id === Number(id));
 
+  const { show, key } = useAnimation(id);
+
   return (
     <div className={styles.container}>
-      <div className={styles.contentWrapper}>
+      <div
+        key={key}
+        className={`${styles.contentWrapper} ${show ? styles.fadeIn : ""}`}
+      >
         <div className={styles.content}>
           <Title title={integrator.title} />
           <div className={styles.wrapper}>

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import styles from "./Plug.module.css";
 import { useEffect } from "react";
 import { ROUTER } from "../../router.config";
+import { useAnimation } from "../../hooks/useAnimation";
 
 export default function Plug() {
   const navigate = useNavigate();
@@ -28,10 +29,12 @@ export default function Plug() {
     };
   }, [navigate]);
 
+  const { show, key } = useAnimation();
+
   return (
     <div className={styles.wrapper}>
-      <div className={styles.background}></div>
-      <div className={styles.content}>
+      <div key={key} className={styles.background}></div>
+      <div className={`${styles.content} ${show ? styles.fadeIn : ""}`}>
         <div className={styles.title}>Добро пожаловать в СберСити!</div>
         <div className={`text ${styles.textContainer}`}>
           <div>

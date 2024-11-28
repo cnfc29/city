@@ -8,17 +8,23 @@ import Pagination from "../../ui/Pagination/Pagination";
 import { ROUTER } from "../../router.config";
 import QrCode from "../../ui/QrCode/QrCode";
 import qrCode from "@content/qr-code/qr-code.svg";
+import { useAnimation } from "../../hooks/useAnimation";
 
 export default function Citizen() {
   const { id } = useParams();
 
   const citizen = data.find((el) => el.id === Number(id));
 
+  const { show, key } = useAnimation(id);
+
   return (
     <div className={styles.container}>
       <div className={`${styles.mainContent}`}>
         <GradientTextBlock citizen />
-        <div className={styles.content}>
+        <div
+          key={key}
+          className={`${styles.content} ${show ? styles.fadeIn : ""}`}
+        >
           <Title title={citizen.title} />
           <div className={styles.wrapper}>
             <Description descriptions={citizen.descriptions} />
