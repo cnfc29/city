@@ -9,7 +9,7 @@ export function useAnimation(id) {
   useEffect(() => {
     setKey(location.pathname);
     setShow(false);
-    const timeoutId = setTimeout(() => setShow(true), 50);
+    const timeoutId = setTimeout(() => setShow(true), 75);
     return () => clearTimeout(timeoutId);
   }, [location.pathname, id]);
 
