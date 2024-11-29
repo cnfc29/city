@@ -49,6 +49,9 @@ export default function Plug() {
             на службе вашего комфорта и безопасности.
           </div>
         </div>
+        <div style={{ margin: "0 auto" }}>
+          <div className={styles.start}>Нажмите для начала</div>
+        </div>
       </div>
     </div>
   );
