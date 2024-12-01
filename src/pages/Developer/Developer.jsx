@@ -4,7 +4,6 @@ import data from "../../data/developer.json";
 import Title from "../../ui/Title/Title";
 import Description from "../../ui/Description/Description";
 import QrCode from "../../ui/QrCode/QrCode";
-import qrCode from "@content/qr-code/qr-code.svg";
 import Pagination from "../../ui/Pagination/Pagination";
 import { ROUTER } from "../../router.config";
 import Photo from "../../ui/Photo/Photo";
@@ -32,7 +31,7 @@ export default function Developer() {
             )}
             {developer.list && <List list={developer.list} />}
             {Number(id) === data.length && (
-              <QrCode style={{ marginRight: "144px" }} src={qrCode} />
+              <QrCode style={{ marginRight: "144px" }} qr2 />
             )}
           </div>
         </div>

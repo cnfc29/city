@@ -8,7 +8,6 @@ import Description from "../../ui/Description/Description";
 import List from "../../ui/List/List";
 import QrCode from "../../ui/QrCode/QrCode";
 import Photo from "../../ui/Photo/Photo";
-import qrCode from "@content/qr-code/qr-code.svg";
 import { useAnimation } from "../../hooks/useAnimation";
 
 export default function ManagementCompany() {
@@ -37,7 +36,7 @@ export default function ManagementCompany() {
               )}
             </div>
             {Number(id) === data.length && (
-              <QrCode style={{ marginRight: "242px" }} src={qrCode} />
+              <QrCode style={{ marginRight: "242px" }} qr2 />
             )}
           </div>
         </div>

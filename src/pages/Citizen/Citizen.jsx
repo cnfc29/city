@@ -7,7 +7,6 @@ import Description from "../../ui/Description/Description";
 import Pagination from "../../ui/Pagination/Pagination";
 import { ROUTER } from "../../router.config";
 import QrCode from "../../ui/QrCode/QrCode";
-import qrCode from "@content/qr-code/qr-code.svg";
 import { useAnimation } from "../../hooks/useAnimation";
 
 export default function Citizen() {
@@ -30,7 +29,7 @@ export default function Citizen() {
             <Description descriptions={citizen.descriptions} />
             {Number(id) === data.length && (
               <div className={styles.qrCode}>
-                <QrCode style={{ marginRight: "144px" }} src={qrCode} />
+                <QrCode style={{ marginRight: "144px" }} />
               </div>
             )}
           </div>

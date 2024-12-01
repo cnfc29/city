@@ -6,7 +6,6 @@ import Navbar from "../Navbar/Navbar";
 import { ROUTER } from "../../router.config";
 import { useInactivityRedirect } from "../../hooks/useInactivityRedirect";
 import QrCode from "../QrCode/QrCode";
-import qrCode from "@content/qr-code/qr-code.svg";
 
 const NOT_ALLOWED_ROUTES = [ROUTER.plug, ROUTER.main];
 
@@ -32,7 +31,7 @@ export default function Background() {
       </div>
       {location.pathname === ROUTER.plug && (
         <div className={styles.qrCode}>
-          <QrCode src={qrCode} plug />
+          <QrCode plug />
         </div>
       )}
       <div
