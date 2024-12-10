@@ -10,7 +10,7 @@ import QrCode from "../QrCode/QrCode";
 const NOT_ALLOWED_ROUTES = [ROUTER.plug, ROUTER.main];
 
 export default function Background() {
-  useInactivityRedirect(60000);
+  useInactivityRedirect(180000);
 
   const location = useLocation();
 
